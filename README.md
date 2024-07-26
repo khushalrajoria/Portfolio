@@ -1,4 +1,4 @@
-# khushal
+# Portfolio app in flutter with firebase
 
 A new Flutter project.
 
