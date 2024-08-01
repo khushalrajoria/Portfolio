@@ -1,6 +1,7 @@
 # Portfolio app in flutter with firebase
 
 A new Flutter project.
+
 (ON HAULT DUE THE LATEST FLUTTER UPADTE AND FIREBASE INTEGRATION PROBLEM)
 
 ## Getting Started
