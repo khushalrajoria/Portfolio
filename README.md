@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+(ON HAULT DUE THE LATEST FLUTTER UPADTE AND FIREBASE INTEGRATION PROBLEM)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
