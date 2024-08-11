@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "832012982735",
+    "project_id": "khushalpro-511a5",
+    "storage_bucket": "khushalpro-511a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832012982735:android:5e8ef5166dcec4707f9aba",
+        "android_client_info": {
+          "package_name": "com.example.khushal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwJ4w01xVVtaDJ5YU83qJSbkbdIHZ52yA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
