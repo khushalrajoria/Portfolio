@@ -17,41 +17,39 @@ class TeamPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: EdgeInsets.only(left: 20, right: 20),
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              "Our Team",
-              style:mode? darkheaderTextStyle:headerTextStyle,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              "I have worked on both college project as a group and as well as an individual also during my internShip I have worked with an indurstrial firm and communicated with real world clients and had their feedback reflected and made successful statisfying projects ",
-              style:mode? darkbodyTextStyle:bodyTextStyle,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            _itemWidget("DugOut Team", "assets/avtar1.png", descriptions),
-            _itemWidget("NoteChats Team", "assets/avtar2.png", descriptions1),
-            _itemWidget("TravelDial Team", "assets/avtar3.png", descriptions2),
-            _itemWidget("Hanuman Traders Team", "assets/avtar4.png", descriptions3),
-          ],
-        ),
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            "Our Team",
+            style:mode? darkheaderTextStyle:headerTextStyle,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Text(
+            "I have worked on both college project as a group and as well as an individual also during my internShip I have worked with an indurstrial firm and communicated with real world clients and had their feedback reflected and made successful statisfying projects ",
+            style:mode? darkbodyTextStyle:bodyTextStyle,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          _itemWidget("DugOut Team", "assets/avtar1.png", descriptions),
+          _itemWidget("NoteChats Team", "assets/avtar2.png", descriptions1),
+          _itemWidget("TravelDial Team", "assets/avtar3.png", descriptions2),
+          _itemWidget("Hanuman Traders Team", "assets/avtar4.png", descriptions3),
+        ],
       ),
     );
   }
 
   Widget _itemWidget(name, image, description) {
     return Container(
-      margin: EdgeInsets.only(top: 10),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.only(top: 10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
         color: mode ?darkcardBGColor:cardBGColor,
       ),
       child: Row(
@@ -60,33 +58,31 @@ class TeamPage extends StatelessWidget {
           Container(
             width: 40,
             height: 40,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
             ),
             child: Image.asset(image),
           ),
-          SizedBox(
+          const SizedBox(
             width: 5,
           ),
           Expanded(
-              child: Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  name,
-                  style:mode? darksubHeaderTextStyle:subHeaderTextStyle,
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  description,
-                  style:mode? darkbodyTextStyle:bodyTextStyle,
-                ),
-              ],
-            ),
-          ))
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    name,
+                    style:mode? darksubHeaderTextStyle:subHeaderTextStyle,
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    description,
+                    style:mode? darkbodyTextStyle:bodyTextStyle,
+                  ),
+                ],
+              ))
         ],
       ),
     );

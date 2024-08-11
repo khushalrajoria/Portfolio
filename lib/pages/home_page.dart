@@ -6,6 +6,8 @@ import '../utils/common_string.dart';
 import '../utils/text_style.dart';
 import '../widgets/app_shimmer_effect.dart';
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -22,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: mode? backgrounddark :backgroundLight,
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

@@ -1,4 +1,4 @@
-// import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:full_screen_image/full_screen_image.dart';
 import 'pages/contact_page.dart';
@@ -10,15 +10,16 @@ import 'utils/AppColors.dart';
 import 'utils/AppIcons.dart';
 import 'widgets/navigation_menu_widget.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 bool mode=false;
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       home:AnimatedSplashScreen(
         duration: Duration.microsecondsPerMillisecond,
       splash: 'assets/logo.png',
-      nextScreen: MyHomePage(),
+      nextScreen: const MyHomePage(),
       splashTransition: SplashTransition.slideTransition,
       splashIconSize: 250,
       backgroundColor: Colors.white,
@@ -40,9 +41,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
-final GlobalKey<ScaffoldState> scaffoldkey = new GlobalKey<ScaffoldState>();
+final GlobalKey<ScaffoldState> scaffoldkey =  GlobalKey<ScaffoldState>();
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -54,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
 
-    _tabController = new TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 5, vsync: this);
 
     _tabController.addListener(() {
       setState(() {
@@ -71,23 +74,21 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         key: scaffoldkey,
         backgroundColor: mode?backgrounddark :backgroundLight,
         body: Container(
-          margin: EdgeInsets.only(top: 10, left: 10),
+          margin: const EdgeInsets.only(top: 10, left: 10),
           child: Row(
             children: <Widget>[
-              Container(
+              SizedBox(
                 width: 50,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     InkWell(
-                      onLongPress: (){
-                        
-                      },
+                      onLongPress: (){},
                       child: Container(
                         width: 45,
                         height: 45,
-                        margin: EdgeInsets.only(bottom: 20),
-                        decoration: BoxDecoration(
+                        margin: const EdgeInsets.only(bottom: 20),
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                         ),
                         child: FullScreenWidget(
@@ -101,31 +102,31 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                         height: iconSize,
                         width: iconSize,
                         isSelected: selectedMenuIndex == 0, onClick: () {
-                      _tabController.animateTo(0,duration:Duration(milliseconds: 500) );
+                      _tabController.animateTo(0,duration:const Duration(milliseconds: 500) );
                     }),
                     NavigationMenu(navTime,
                         height: iconSize,
                         width: iconSize,
                         isSelected: selectedMenuIndex == 1, onClick: () {
-                      _tabController.animateTo(1,duration:Duration(milliseconds: 500) );
+                      _tabController.animateTo(1,duration:const Duration(milliseconds: 500) );
                     }),
                     NavigationMenu(navPortfolio,
                         height: iconSize,
                         width: iconSize,
                         isSelected: selectedMenuIndex == 2, onClick: () {
-                      _tabController.animateTo(2,duration:Duration(milliseconds: 500) );
+                      _tabController.animateTo(2,duration:const Duration(milliseconds: 500) );
                     }),
                     NavigationMenu(navGroup,
                         height: iconSize,
                         width: iconSize,
                         isSelected: selectedMenuIndex == 3, onClick: () {
-                      _tabController.animateTo(3,duration:Duration(milliseconds: 500) );
+                      _tabController.animateTo(3,duration:const Duration(milliseconds: 500) );
                     }),
                     NavigationMenu(navContact,
                         height: iconSize,
                         width: iconSize,
                         isSelected: selectedMenuIndex == 4, onClick: () {
-                      _tabController.animateTo(4,duration:Duration(milliseconds: 500) );
+                      _tabController.animateTo(4,duration:const Duration(milliseconds: 500) );
                     }),
                     IconButton(
                       onPressed:(){
@@ -134,26 +135,23 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                        });
 
                       },
-                      icon: mode? Icon(Icons.dark_mode):Icon(Icons.light_mode),
-                      color: mode? Color.fromARGB(255, 33, 252, 233):Colors.grey,
+                      icon: mode? const Icon(Icons.dark_mode):const Icon(Icons.light_mode),
+                      color: mode? const Color.fromARGB(255, 33, 252, 233):Colors.grey,
                       )
                   ],
                 ),
               ),
               Flexible(
                 fit: FlexFit.tight,
-                child: Container(
-                  child: TabBarView(
-                    controller: _tabController,
-                    children: [
-                      HomePage(),
-                      ExperiencePage(),
-                      PortfolioPage(),
-                      // MyPortfoliaPage(),
-                      TeamPage(),
-                      ContactPage(),
-                    ],
-                  ),
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    const HomePage(),
+                    const ExperiencePage(),
+                    PortfolioPage(),
+                    TeamPage(),
+                    const ContactPage(),
+                  ],
                 ),
               ),
             ],
